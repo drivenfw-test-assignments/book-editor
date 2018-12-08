@@ -17,8 +17,18 @@
   color: black;
 }
 
-.sortby {
+.header__createbook {
   margin-left: auto;
+}
+
+.createbook {
+  height: 30px;
+  margin-right: 1.6em;
+  border-radius: 3px;
+  font-size: 0.75em;
+}
+
+.sortby {
   display: flex;
   align-items: center;
 }

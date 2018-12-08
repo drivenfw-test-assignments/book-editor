@@ -6,8 +6,9 @@ import {
   Switch
 } from 'react-router-dom'
 import Header from 'components/Header'
-import BookList from 'pages/BookList'
 import BookEdit from 'pages/BookEdit'
+import BookList from 'pages/BookList'
+import BookNew from 'pages/BookNew'
 import './styles.css'
 
 
@@ -17,6 +18,7 @@ const App = () =>
       <Header />
       <Switch>
         <Route exact path="/" component={BookList} />
+        <Route path="/books/new" component={BookNew} />
         <Route path="/books/:id/edit" component={BookEdit} />
         <Route render={() => <Redirect to="/" />} />
       </Switch>

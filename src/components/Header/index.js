@@ -35,6 +35,11 @@ const Header = ({
     <Link className="header__home" to="/">
       Book Editor
     </Link>
+    <Link className="header__createbook" to="/books/new">
+      <button className="createbook">
+        New Book
+      </button>
+    </Link>
     <div className="sortby">
       <div className="sortby__label">
         Sort by:
