@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Book from 'components/Book'
-import { deleteBook } from 'actions'
+import { deleteBook } from 'actions/books'
+import getSortedBooks from 'selectors'
 import './styles.css'
 
 
 const mapStateToProps = state => ({
-  bookList: state
+  bookList: getSortedBooks(state)
 })
 
 const mapDispatchToProps = dispatch => ({
