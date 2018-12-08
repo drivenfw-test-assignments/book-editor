@@ -17,6 +17,12 @@
   color: black;
 }
 
+.header__page-title {
+  margin-left: 0.5em;
+  font-size: 0.75em;
+  align-self: flex-start;
+}
+
 .header__createbook {
   margin-left: auto;
 }

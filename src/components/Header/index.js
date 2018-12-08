@@ -1,10 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import {
   setSortingField,
   toggleSortingDirection
 } from 'actions/sorting'
+import PageTitle from './PageTitle'
 import './styles.css'
 
 
@@ -35,6 +36,12 @@ const Header = ({
     <Link className="header__home" to="/">
       Book Editor
     </Link>
+    <Route path="/books/new" render={() =>
+      <PageTitle title="New Book" />
+    } />
+    <Route path="/books/:id/edit" render={() =>
+      <PageTitle title="Edit Book" />
+    } />
     <Link className="header__createbook" to="/books/new">
       <button className="createbook">
         New Book
@@ -61,8 +68,8 @@ const Header = ({
     </div>
   </div>
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(Header)
+)(Header))
 
