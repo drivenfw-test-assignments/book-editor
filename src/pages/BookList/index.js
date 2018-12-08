@@ -11,7 +11,11 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  onBookDelete: id => dispatch(deleteBook(id))
+  onBookDelete: id => { 
+    if (confirm('Are you sure?')) {
+      dispatch(deleteBook(id))
+    }
+  }
 })
 
 const BookList = ({ bookList, onBookDelete }) =>

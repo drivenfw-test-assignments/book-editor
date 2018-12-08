@@ -21,6 +21,10 @@
   display: flex;
 }
 
+.book__infocol {
+  width: 250px;
+}
+
 .book__infocol + .book__infocol {
   margin-left: 5em;
 }
