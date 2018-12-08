@@ -1,3 +1,6 @@
+import { DELETE_BOOK } from 'actions'
+
+
 const initialState = [{
   id: 1,
   title: 'Steve Jobs',
@@ -25,6 +28,18 @@ const initialState = [{
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case DELETE_BOOK:
+      const bookInd = state.findIndex(book => 
+        book.id === action.payload
+      )
+
+      return bookInd >= 0
+        ? [
+            ...state.slice(0, bookInd),
+            ...state.slice(bookInd + 1)
+          ]
+        : state
+
     default:
       return state
   }

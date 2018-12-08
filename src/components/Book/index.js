@@ -4,7 +4,7 @@ import BookField from './BookField'
 import './styles.css'
 
 
-const Book = ({ book }) =>
+const Book = ({ book, onDelete }) =>
   <div className="book">
     <div>
       <div className="book__title">
@@ -46,7 +46,12 @@ const Book = ({ book }) =>
         <Link to={`/books/${book.id}/edit`}>
           <button className="book__btn">Edit</button>
         </Link>
-        <button className="book__btn">Delete</button>
+        <button 
+          className="book__btn"
+          onClick={onDelete}
+        >
+          Delete
+        </button>
       </div>
     </div>
     <div className="book__image">
