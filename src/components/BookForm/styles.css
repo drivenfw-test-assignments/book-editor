@@ -1,0 +1,53 @@
+.book-form {
+  font-size: 1.6em;
+}
+
+.form-group {
+  padding: 0.4em;
+}
+
+.form-group__label {
+  width: 250px;
+  margin-right: .7em;
+  font-weight: bold; 
+  display: inline-block;
+  text-align: right;
+}
+
+.form-group__input {
+  width: 300px;
+  font-size: 0.7em;
+  padding: .1em .5em;
+}
+
+.form-group__error {
+  width: 100px;
+  margin-left: .7em;
+  font-size: .7em;
+  color: red;
+  display: inline-block;
+}
+
+.book-form__add-author-btn {
+  margin-left: auto;
+  margin-right: 150px;
+  border-radius: 3px;
+  font-size: .6em;
+  display: block;
+}
+
+.form-buttons {
+  margin-top: 1.5em;
+  display: flex;
+  justify-content: center;
+}
+
+.form-buttons__btn {
+  border-radius: 3px;
+  font-size: 1em;
+}
+
+.form-buttons__btn + .form-buttons__btn {
+  margin-left: 1em;
+}
+
