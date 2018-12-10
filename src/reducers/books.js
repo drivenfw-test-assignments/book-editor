@@ -5,11 +5,6 @@ import {
 } from 'actions/books'
 
 
-/* const initialState = {
-  currId: 0,
-  data: []
-} */
-
 const initialState = {
   currId: 2,
   data: [{
@@ -22,7 +17,7 @@ const initialState = {
     pages: 656,
     publisher: 'Simon & Schuster (U.S.)',
     yearOfPublication: 2011,
-    releaseDate: 'October 24, 2011',
+    releaseDate: '2011-10-24',
     isbn: '1-4516-4853-7',
     imageUrl: ''
   }, {
@@ -34,7 +29,7 @@ const initialState = {
     }],
     pages: 498,
     yearOfPublication: 2005,
-    releaseDate: 'October 5, 2005'
+    releaseDate: '2005-10-05'
   }]
 }
 
@@ -68,6 +63,21 @@ const books = (state = initialState, action) => {
             ]
           }
         : state
+
+    case EDIT_BOOK:
+      const { id, values } = action.payload
+
+      return {
+        ...state,
+        data: state.data.map(book => (
+          book.id === +id
+            ? {
+                ...book,
+                ...values 
+              }
+            : book
+        ))
+      }
 
     default:
       return state

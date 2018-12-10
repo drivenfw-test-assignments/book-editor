@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import BookForm from 'components/BookForm'
+import { editBook } from 'actions/books'
 
 
 const mapStateToProps = (
@@ -14,8 +15,11 @@ const mapStateToProps = (
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  onFormSubmit: () => {}
+const mapDispatchToProps = (
+  dispatch,
+  { match: { params: { id } } }
+) => ({
+  onFormSubmit: values => dispatch(editBook(id, values))
 })
 
 const BookEdit = ({ initialValues, onFormSubmit }) =>
