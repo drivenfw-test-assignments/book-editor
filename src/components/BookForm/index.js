@@ -138,7 +138,7 @@ const BookForm = ({
             </div>
           )}
         </Field>
-        <Field name="published">
+        <Field name="yearOfPublication">
           {({ input, meta }) => (  
             <div className="form-group">
               <label className="form-group__label">Year of publication</label>
@@ -156,7 +156,7 @@ const BookForm = ({
             </div>
           )}
         </Field>
-        <Field name="released">
+        <Field name="releaseDate">
           {({ input, meta }) => (  
             <div className="form-group">
               <label className="form-group__label">Release date</label>

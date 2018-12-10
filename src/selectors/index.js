@@ -5,7 +5,7 @@ import {
 } from 'helpers/compare'
 
 
-const getBooks = state => state.books
+const getBooks = state => state.books.data
 const getSortingDirection = state => state.sorting.direction
 const getSortingField = state => state.sorting.field
 

@@ -1,10 +1,55 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import BookForm from 'components/BookForm'
+import { createBook } from 'actions/books'
 
 
-const BookNew = () =>
-  <div className="book-new">
-    Book New
-  </div>
+const initialValues = {
+  title: '',
+  authors: [{
+    name: '',
+    surname: '' 
+  }],
+  pages: '',
+  publisher: '',
+  yearOfPublication: '',
+  releaseDate: '',
+  isbn: ''
+}
 
-export default BookNew
+const mapStateToProps = ({ books: { currId } }) => ({
+  currId
+})
+
+const mapDispatchToProps = dispatch => ({
+  onFormSubmit: values => dispatch(createBook(values))
+})
+
+class BookNew extends Component {
+  componentDidUpdate(prevProps) {
+    const { currId } = this.props
+
+    if (currId !== prevProps.currId) {
+      this.props.history.push(`/books/${currId}/edit`)
+    }
+  }
+
+  render() {
+    const { currId, onFormSubmit } = this.props
+
+    return (
+      <div className="book-new">
+        <BookForm
+          initialValues={initialValues}
+          onSubmit={onFormSubmit}
+        />
+      </div>
+    )
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BookNew)
 
