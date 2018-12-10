@@ -74,7 +74,16 @@ const BookForm = ({
                 >
                   {({ input, meta }) => (  
                     <div className="form-group">
-                      <label className="form-group__label"></label>
+                      <label className="form-group__label">
+                        {index > 0 && 
+                          <span
+                            className="form-group__delete-author"
+                            onClick={() => fields.remove(index)}
+                          >
+                            ❌
+                          </span>
+                        }
+                      </label>
                       <input 
                         className="form-group__input"
                         {...input} 

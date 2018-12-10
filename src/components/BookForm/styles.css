@@ -14,6 +14,12 @@
   text-align: right;
 }
 
+.form-group__delete-author {
+  font-size: 0.8em;
+  cursor: pointer;
+  display: inline-block;
+}
+
 .form-group__input {
   width: 300px;
   font-size: 0.7em;
