@@ -16,7 +16,7 @@ const Book = ({ book, onDelete }) =>
             title="Authors"
             content={book.authors.map(({ name, surname }) =>
               `${name} ${surname}`   
-            )}
+            ).join(', ')}
           />  
           <BookField
             title="Pages"
