@@ -44,17 +44,17 @@ const Header = ({
     } />
     <Route exact path="/" render={() =>
       <React.Fragment> 
-        <Link className="header__createbook" to="/books/new">
-          <button className="createbook">
+        <Link className="header__create-book" to="/books/new">
+          <button className="create-book">
             New Book
           </button>
         </Link>
-        <div className="sortby">
-          <div className="sortby__label">
+        <div className="sort-by">
+          <div className="sort-by__label">
             Sort by:
           </div>
           <select
-            className="sortby__field"
+            className="sort-by__field"
             value={field}
             onChange={onFieldChange}
           >
@@ -62,7 +62,7 @@ const Header = ({
             <option value="yearOfPublication">Year of publication</option>
           </select>
           <button 
-            className="sortby__direction"
+            className="sort-by__direction"
             onClick={onDirectionChange}
           >
             {direction === 'asc' ? '▲' : '▼'}

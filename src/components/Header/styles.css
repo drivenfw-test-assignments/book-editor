@@ -23,33 +23,33 @@
   align-self: flex-start;
 }
 
-.header__createbook {
+.header__create-book {
   margin-left: auto;
 }
 
-.createbook {
+.create-book {
   height: 30px;
   margin-right: 1.6em;
   border-radius: 3px;
   font-size: 0.75em;
 }
 
-.sortby {
+.sort-by {
   display: flex;
   align-items: center;
 }
 
-.sortby__label {
+.sort-by__label {
   font-size: 0.75em;
   margin-right: 0.8em;
 }
 
-.sortby__field {
+.sort-by__field {
   font-size: 0.85em; 
   margin-right: 0.8em;
 }
 
-.sortby__direction {
+.sort-by__direction {
   width: 30px;
   height: 30px;
   border-radius: 3px;
