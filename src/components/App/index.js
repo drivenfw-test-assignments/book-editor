@@ -9,6 +9,7 @@ import Header from 'components/Header'
 import BookEdit from 'pages/BookEdit'
 import BookList from 'pages/BookList'
 import BookNew from 'pages/BookNew'
+import Message from 'components/Message'
 import './styles.css'
 
 
@@ -16,6 +17,7 @@ const App = () =>
   <Router>
     <div className="app">
       <Header />
+      <Message />
       <Switch>
         <Route exact path="/" component={BookList} />
         <Route path="/books/new" component={BookNew} />
