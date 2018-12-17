@@ -33,15 +33,17 @@ const Header = ({
   onFieldChange
 }) =>
   <div className="header">
-    <Link className="header__home" to="/">
-      Book Editor
-    </Link>
-    <Route path="/books/new" render={() =>
-      <PageTitle title="New Book" />
-    } />
-    <Route path="/books/:id/edit" render={() =>
-      <PageTitle title="Edit Book" />
-    } />
+    <div className="header__current-path">
+      <Link className="header__home" to="/">
+        Book Editor
+      </Link>
+      <Route path="/books/new" render={() =>
+        <PageTitle title="New Book" />
+      } />
+      <Route path="/books/:id/edit" render={() =>
+        <PageTitle title="Edit Book" />
+      } />
+    </div>
     <Route exact path="/" render={() =>
       <React.Fragment> 
         <Link className="header__create-book" to="/books/new">

@@ -3,7 +3,8 @@ body {
   margin: 0;
 }
 
-button {
+button, select {
+  background: white;
   outline: none;
 }
 
