@@ -11,7 +11,7 @@ const Book = ({ book, onDelete }) =>
         {book.title}
       </div>
       <div className="book__info">
-        <div className="book__infocol">
+        <div className="book__info-col">
           <BookField
             title="Authors"
             content={book.authors.map(({ name, surname }) =>
@@ -27,7 +27,7 @@ const Book = ({ book, onDelete }) =>
             content={book.publisher}
           />
         </div>
-        <div className="book__infocol">
+        <div className="book__info-col">
           <BookField
             title="Published"
             content={book.yearOfPublication}
