@@ -8,3 +8,7 @@ button, select {
   outline: none;
 }
 
+input {
+  border: 1px solid lightgrey;
+}
+

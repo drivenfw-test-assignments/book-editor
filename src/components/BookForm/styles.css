@@ -1,17 +1,21 @@
 .book-form {
-  font-size: 1.6em;
+  font-size: 1.3em;
 }
 
 .form-group {
   padding: 0.4em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .form-group__label {
   width: 250px;
-  margin-right: .7em;
+  margin-bottom: .3em;
+  font-size: 0.8em;
   font-weight: bold; 
   display: inline-block;
-  text-align: right;
+  text-align: left;
 }
 
 .form-group__delete-author {
@@ -22,14 +26,14 @@
 }
 
 .form-group__input {
-  width: 300px;
-  font-size: 0.7em;
+  width: 250px;
+  font-size: 0.9em;
   padding: .1em .5em;
 }
 
 .form-group__error {
   width: 100px;
-  margin-left: .7em;
+  margin-top: .3em;
   font-size: .7em;
   color: red;
   display: inline-block;
@@ -50,11 +54,43 @@
 }
 
 .form-buttons__btn {
+  width: 80px;
+  margin-bottom: 1em;
   border-radius: 3px;
   font-size: 1em;
 }
 
 .form-buttons__btn + .form-buttons__btn {
   margin-left: 1em;
+}
+
+@media (min-width: 768px) {
+  .book-form {
+    font-size: 1.6em;
+  }
+
+  .form-group {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .form-group__label {
+    margin-right: .7em;
+    margin-bottom: 0;
+    text-align: right;
+  }
+
+  .form-group__input {
+    width: 300px;
+  }
+
+  .form-group__error {
+    margin-top: 0;
+    margin-left: .7em;
+  }
+
+  .form-buttons__btn {
+    width: 130px;
+  }
 }
 
