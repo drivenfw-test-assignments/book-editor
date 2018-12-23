@@ -33,7 +33,7 @@
   display: flex;
 }
 
-.book__fieldtitle {
+.book__field-title {
   font-weight: bold;
   padding-right: 0.3em;
 }
