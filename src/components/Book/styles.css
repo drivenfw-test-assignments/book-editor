@@ -6,11 +6,11 @@
 }
 
 .book:hover {
-  background: #F2F4F4;
+  background: var(--secondary-color);
 }
 
 .book + .book {
-  border-top: 1px solid #F2F4F4;
+  border-top: 1px solid var(--secondary-color);
 }
 
 .book__title {
@@ -57,7 +57,7 @@
   width: 130px;
   height: 175px;
   margin-bottom: 1em;
-  border: 1px solid lightgrey;
+  border: 1px solid var(--primary-color);
   order: -1;
 }
 
