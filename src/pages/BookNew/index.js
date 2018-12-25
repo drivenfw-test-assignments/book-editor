@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import BookForm from 'components/BookForm'
 import { createBook } from 'actions/books'
+import './styles.css'
 
 
 const initialValues = {

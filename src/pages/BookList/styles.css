@@ -1,3 +1,10 @@
 .book-list {
+  margin-top: 8.8em;
+}
+
+@media (min-width: 768px) {
+  .book-list {
+    margin-top: 5em;
+  }
 }
 

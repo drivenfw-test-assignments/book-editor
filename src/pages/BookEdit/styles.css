@@ -1,0 +1,9 @@
+.book-edit {
+  margin-top: 4em; 
+}
+
+@media (min-width: 768px) {
+  .book-edit {
+    margin-top: 6em;
+  }
+}

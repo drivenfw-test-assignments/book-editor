@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import BookForm from 'components/BookForm'
 import { editBook } from 'actions/books'
+import './styles.css'
 
 
 const mapStateToProps = (
