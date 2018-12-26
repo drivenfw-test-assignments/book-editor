@@ -37,6 +37,13 @@ const Header = ({
       <Link className="header__home" to="/">
         Book Editor
       </Link>
+      <Route exact path="/" render={() =>
+        <Link className="header__create-book" to="/books/new">
+          <button className="create-book">
+            New Book
+          </button>
+        </Link>
+      } />
       <Route path="/books/new" render={() =>
         <PageTitle title="New Book" />
       } />
@@ -45,32 +52,25 @@ const Header = ({
       } />
     </div>
     <Route exact path="/" render={() =>
-      <React.Fragment> 
-        <Link className="header__create-book" to="/books/new">
-          <button className="create-book">
-            New Book
-          </button>
-        </Link>
-        <div className="sort-by">
-          <div className="sort-by__label">
-            Sort by:
-          </div>
-          <select
-            className="sort-by__field"
-            value={field}
-            onChange={onFieldChange}
-          >
-            <option value="title">Title</option>
-            <option value="yearOfPublication">Year of publication</option>
-          </select>
-          <button 
-            className="sort-by__direction"
-            onClick={onDirectionChange}
-          >
-            {direction === 'asc' ? '▲' : '▼'}
-          </button>
+      <div className="sort-by">
+        <div className="sort-by__label">
+          Sort by:
         </div>
-      </React.Fragment>
+        <select
+          className="sort-by__field"
+          value={field}
+          onChange={onFieldChange}
+        >
+          <option value="title">Title</option>
+          <option value="yearOfPublication">Year of publication</option>
+        </select>
+        <button 
+          className="sort-by__direction"
+          onClick={onDirectionChange}
+        >
+          {direction === 'asc' ? '▲' : '▼'}
+        </button>
+      </div>
     } />
   </div>
 
