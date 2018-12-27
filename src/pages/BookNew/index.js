@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import BookForm from 'components/BookForm'
+import scrollTo from 'hoc/scrollTo'
 import { createBook } from 'actions/books'
 import './styles.css'
 
@@ -52,5 +53,5 @@ class BookNew extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BookNew)
+)(scrollTo(BookNew, 0, 0))
 

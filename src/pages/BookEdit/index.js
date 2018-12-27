@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import BookForm from 'components/BookForm'
+import scrollTo from 'hoc/scrollTo'
 import { editBook } from 'actions/books'
 import './styles.css'
 
@@ -34,5 +35,5 @@ const BookEdit = ({ initialValues, onFormSubmit }) =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BookEdit)
+)(scrollTo(BookEdit, 0, 0))
 
