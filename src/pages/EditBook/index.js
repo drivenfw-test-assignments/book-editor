@@ -24,8 +24,8 @@ const mapDispatchToProps = (
   onFormSubmit: values => dispatch(editBook(id, values))
 })
 
-const BookEdit = ({ initialValues, onFormSubmit }) =>
-  <div className="book-edit">
+const EditBook = ({ initialValues, onFormSubmit }) =>
+  <div className="edit-book">
     <BookForm
       initialValues={initialValues}
       onSubmit={onFormSubmit}
@@ -35,5 +35,5 @@ const BookEdit = ({ initialValues, onFormSubmit }) =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(scrollTo(BookEdit, 0, 0))
+)(scrollTo(EditBook, 0, 0))
 
