@@ -27,7 +27,7 @@ const mapDispatchToProps = dispatch => ({
   onFormSubmit: values => dispatch(createBook(values))
 })
 
-class BookNew extends Component {
+class NewBook extends Component {
   componentDidUpdate(prevProps) {
     const { currId } = this.props
 
@@ -40,7 +40,7 @@ class BookNew extends Component {
     const { currId, onFormSubmit } = this.props
 
     return (
-      <div className="book-new">
+      <div className="new-book">
         <BookForm
           initialValues={initialValues}
           onSubmit={onFormSubmit}
@@ -53,5 +53,5 @@ class BookNew extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(scrollTo(BookNew, 0, 0))
+)(scrollTo(NewBook, 0, 0))
 

@@ -1,9 +1,9 @@
-.book-new {
+.new-book {
   margin-top: 4em; 
 }
 
 @media (min-width: 768px) {
-  .book-new {
+  .new-book {
     margin-top: 6em;
   }
 }
