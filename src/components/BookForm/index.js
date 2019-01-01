@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Form, Field } from 'react-final-form'
 import arrayMutators from 'final-form-arrays'
 import { FieldArray } from 'react-final-form-arrays'
@@ -8,8 +9,8 @@ import './styles.css'
 const required = value => (value ? undefined : "Required")
 
 const BookForm = ({ 
-  onSubmit,
-  initialValues
+  initialValues,
+  onSubmit
 }) =>
   <Form
     initialValues={initialValues}
@@ -217,6 +218,11 @@ const BookForm = ({
       </form>
     )}
   />
+
+BookForm.propTypes = {
+  initialValues: PropTypes.object.isRequired,
+  onSubmit: PropTypes.func.isRequired
+}
 
 export default BookForm
 
