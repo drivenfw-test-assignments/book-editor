@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import BookField from './BookField'
 import './styles.css'
@@ -58,6 +59,11 @@ const Book = ({ book, onDelete }) =>
       {book.imageUrl && <image src={book.imageUrl} />}
     </div>
   </div>
+
+Book.propTypes = {
+  book: PropTypes.object.isRequired,
+  onDelete: PropTypes.func.isRequired
+}
 
 export default Book
 
