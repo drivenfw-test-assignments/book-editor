@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import {
@@ -73,6 +74,11 @@ const Header = ({
       </div>
     } />
   </div>
+
+Header.propTypes = {
+  direction: PropTypes.string.isRequired,
+  field: PropTypes.string.isRequired
+}
 
 export default withRouter(connect(
   mapStateToProps,
