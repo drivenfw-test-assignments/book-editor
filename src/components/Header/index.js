@@ -77,7 +77,9 @@ const Header = ({
 
 Header.propTypes = {
   direction: PropTypes.string.isRequired,
-  field: PropTypes.string.isRequired
+  field: PropTypes.string.isRequired,
+  onDirectionChange: PropTypes.func.isRequired,
+  onFieldChange: PropTypes.func.isRequired
 }
 
 export default withRouter(connect(
