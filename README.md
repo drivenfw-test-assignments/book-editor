@@ -1,1 +1,6 @@
-# book-editor
+Book Editor
+
+Technologies:
+
+React
+
