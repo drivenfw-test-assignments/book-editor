@@ -6,4 +6,5 @@ Babel
 Final Form
 React
 Redux
+Webpack
 
