@@ -20,8 +20,7 @@ const BookForm = ({
     onSubmit={onSubmit}
     render={({ 
       handleSubmit, 
-      form: { mutators: { push, pop } },
-      reset, 
+      form: { mutators: { push, pop }, reset },
       submitting, 
       pristine, 
       values 
