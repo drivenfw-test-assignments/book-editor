@@ -7,5 +7,6 @@ Final Form
 React
 React-Router
 Redux
+Redux-Thunk
 Webpack
 
