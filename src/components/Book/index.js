@@ -56,7 +56,7 @@ const Book = ({ book, onDelete }) =>
       </div>
     </div>
     <div className="book__image">
-      {book.imageUrl && <image src={book.imageUrl} />}
+      {book.imageUrl && <img src={book.imageUrl} />}
     </div>
   </div>
 

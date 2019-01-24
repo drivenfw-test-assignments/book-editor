@@ -61,6 +61,11 @@
   order: -1;
 }
 
+.book__image > img {
+  width: 130px;
+  height: 175px;
+}
+
 @media (min-width: 768px) {
   .book {
     width: 728px;
