@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import BookForm from 'components/BookForm'
 import scrollTo from 'hoc/scrollTo'
 import { createBook } from 'actions/books'
+import { setMessage } from 'actions/message'
 import './styles.css'
 
 
@@ -24,14 +25,18 @@ const mapStateToProps = ({ books: { currId } }) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  onFormSubmit: values => dispatch(createBook(values))
+  onFormSubmit: values => dispatch(createBook(values)),
+  setMessage: msg => dispatch(setMessage(msg))
 })
 
 class NewBook extends Component {
   componentDidUpdate(prevProps) {
-    const { currId } = this.props
+    const { currId, setMessage } = this.props
 
     if (currId !== prevProps.currId) {
+      setMessage('Book successfully created!')
+      setTimeout(() => setMessage(''), 1000)
+
       this.props.history.push(`/books/${currId}/edit`)
     }
   }
