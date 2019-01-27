@@ -8,5 +8,6 @@ React
 React-Router
 Redux
 Redux-Thunk
+Reselect
 Webpack
 
