@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import BookForm from 'components/BookForm'
 import scrollTo from 'hoc/scrollTo'
-import { createBook } from 'actions/books'
+import { create } from 'actions/books'
 import { setMessage } from 'actions/message'
 import './styles.css'
 
@@ -25,7 +25,7 @@ const mapStateToProps = ({ books: { currId } }) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  onFormSubmit: values => dispatch(createBook(values)),
+  onFormSubmit: values => dispatch(create(values)),
   setMessage: msg => dispatch(setMessage(msg))
 })
 
