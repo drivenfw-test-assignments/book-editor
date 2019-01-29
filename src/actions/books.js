@@ -10,9 +10,12 @@ const createBook = values => ({
   payload: values
 })
 
-export const create = values => dispatch => {
-  dispatch(createBook(values))
-  LocalStorage.createBook(values)
+export const create = values => (dispatch, getState) => {
+  const { books: { currId } } = getState()
+  const book = { id: currId + 1, ...values }
+
+  dispatch(createBook(book))
+  LocalStorage.createBook(book)
 }
 
 export const deleteBook = id => ({

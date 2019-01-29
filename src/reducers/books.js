@@ -36,16 +36,13 @@ const initialState = {
 const books = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
-      const nextId = state.currId + 1
+      const nextId = action.payload.id
 
       return {
         currId: nextId,
         data: [
           ...state.data,
-          {
-            id: nextId,
-            ...action.payload
-          }
+          { ...action.payload }
         ]
       }
 
