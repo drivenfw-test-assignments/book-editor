@@ -68,10 +68,7 @@ const books = (state = initialState, action) => {
         ...state,
         data: state.data.map(book => (
           book.id === +id
-            ? {
-                ...book,
-                ...values 
-              }
+            ? { ...book, ...values }
             : book
         ))
       }

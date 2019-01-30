@@ -10,6 +10,11 @@ const createBook = values => ({
   payload: values
 })
 
+const editBook = (id, values) => ({
+  type: EDIT_BOOK,
+  payload: { id, values }
+})
+
 export const create = values => (dispatch, getState) => {
   const { books: { currId } } = getState()
   const book = { id: currId + 1, ...values }
@@ -18,13 +23,14 @@ export const create = values => (dispatch, getState) => {
   LocalStorage.createBook(book)
 }
 
+export const edit = (id, values) => dispatch => {
+  dispatch(editBook(id, values))
+  LocalStorage.editBook(id, values)
+}
+
 export const deleteBook = id => ({
   type: DELETE_BOOK,
   payload: id
 })
 
-export const editBook = (id, values) => ({
-  type: EDIT_BOOK,
-  payload: { id, values }
-})
 
