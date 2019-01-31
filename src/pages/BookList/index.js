@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Book from 'components/Book'
-import { deleteBook } from 'actions/books'
+import { del } from 'actions/books'
 import getSortedBooks from 'selectors'
 import './styles.css'
 
@@ -13,7 +13,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onBookDelete: id => { 
     if (confirm('Are you sure?')) {
-      dispatch(deleteBook(id))
+      dispatch(del(id))
     }
   }
 })

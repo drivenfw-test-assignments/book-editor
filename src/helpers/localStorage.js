@@ -35,3 +35,21 @@ export function editBook(id, book) {
   }
 }
 
+export function deleteBook(id) {
+  if (window.localStorage) {
+    const lsData = localStorage.getItem('BOOK-EDITOR')
+
+    if (lsData) {
+      const data = JSON.parse(lsData)
+      const ind = data.books.findIndex(b => b.id === +id)
+
+      if (ind >= 0) {
+        data.books.splice(ind, 1)
+        localStorage.setItem('BOOK-EDITOR', JSON.stringify(data))
+      }
+    } else {
+      // ERROR!
+    }
+  }
+}
+
