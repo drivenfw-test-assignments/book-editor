@@ -53,3 +53,13 @@ export function deleteBook(id) {
   }
 }
 
+export function loadData() {
+  if (window.localStorage) {
+    const lsData = localStorage.getItem('BOOK-EDITOR')
+
+    if (lsData) {
+      return JSON.parse(lsData)
+    }
+  }
+}
+

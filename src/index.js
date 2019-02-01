@@ -2,11 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import configureStore from 'configureStore'
+import { loadData } from 'helpers/localStorage'
 import App from 'components/App'
 import './styles.css'
 
 
-const store = configureStore()
+const store = configureStore(loadData())
 
 ReactDOM.render(
   <Provider store={store}>
