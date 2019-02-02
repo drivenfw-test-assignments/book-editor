@@ -9,7 +9,10 @@ export function createBook(book) {
     } else {
       data = {
         books: [book],
-        sorting: {}
+        sorting: {
+          direction: 'asc',
+          field: 'title'
+        }
       }
     }
 
@@ -49,6 +52,29 @@ export function deleteBook(id) {
       }
     } else {
       // ERROR!
+    }
+  }
+}
+
+export function setSortingField(field) {
+  if (window.localStorage) {
+    const lsData = localStorage.getItem('BOOK-EDITOR')
+    let data
+   
+    if (lsData) {
+      data = JSON.parse(lsData)
+      data.sorting = {
+        ...data.sorting,
+        field 
+      }
+    } else {
+      data = {
+        books: [],
+        sorting: {
+          direction: 'asc',
+          field
+        }
+      }
     }
   }
 }
