@@ -79,6 +79,29 @@ export function setSortingField(field) {
   }
 }
 
+export function setSortingDirection(directon) {
+  if (window.localStorage) {
+    const lsData = localStorage.getItem('BOOK-EDITOR')
+    let data
+   
+    if (lsData) {
+      data = JSON.parse(lsData)
+      data.sorting = {
+        ...data.sorting,
+        direction
+      }
+    } else {
+      data = {
+        books: [],
+        sorting: {
+          direction,
+          field: 'title'
+        }
+      }
+    }
+  }
+}
+
 export function loadData() {
   if (window.localStorage) {
     const lsData = localStorage.getItem('BOOK-EDITOR')
