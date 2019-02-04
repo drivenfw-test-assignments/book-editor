@@ -56,6 +56,29 @@ export function deleteBook(id) {
   }
 }
 
+export function setSortingDirection(direction) {
+  if (window.localStorage) {
+    const lsData = localStorage.getItem('BOOK-EDITOR')
+    let data
+   
+    if (lsData) {
+      data = JSON.parse(lsData)
+      data.sorting = {
+        ...data.sorting,
+        direction
+      }
+    } else {
+      data = {
+        books: [],
+        sorting: {
+          direction,
+          field: 'title'
+        }
+      }
+    }
+  }
+}
+
 export function setSortingField(field) {
   if (window.localStorage) {
     const lsData = localStorage.getItem('BOOK-EDITOR')
@@ -73,29 +96,6 @@ export function setSortingField(field) {
         sorting: {
           direction: 'asc',
           field
-        }
-      }
-    }
-  }
-}
-
-export function setSortingDirection(directon) {
-  if (window.localStorage) {
-    const lsData = localStorage.getItem('BOOK-EDITOR')
-    let data
-   
-    if (lsData) {
-      data = JSON.parse(lsData)
-      data.sorting = {
-        ...data.sorting,
-        direction
-      }
-    } else {
-      data = {
-        books: [],
-        sorting: {
-          direction,
-          field: 'title'
         }
       }
     }

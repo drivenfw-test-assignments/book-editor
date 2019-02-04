@@ -4,7 +4,7 @@ import { Link, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import {
   setSortingField,
-  toggleSortingDirection
+  toggleSortDirection
 } from 'actions/sorting'
 import PageTitle from './PageTitle'
 import './styles.css'
@@ -22,7 +22,7 @@ const mapStateToProps = ({
 
 const mapDispatchToProps = dispatch => ({
   onDirectionChange: () => 
-    dispatch(toggleSortingDirection()),
+    dispatch(toggleSortDirection()),
   onFieldChange: e => 
     dispatch(setSortingField(e.target.value))
 })
