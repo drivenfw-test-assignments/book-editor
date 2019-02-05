@@ -76,6 +76,8 @@ export function setSortingDirection(direction) {
         }
       }
     }
+
+    localStorage.setItem('BOOK-EDITOR', JSON.stringify(data))
   }
 }
 
