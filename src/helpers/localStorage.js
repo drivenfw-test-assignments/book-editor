@@ -101,6 +101,8 @@ export function setSortingField(field) {
         }
       }
     }
+
+    localStorage.setItem('BOOK-EDITOR', JSON.stringify(data))
   }
 }
 

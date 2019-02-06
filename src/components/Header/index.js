@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import {
-  setSortingField,
+  setSortField,
   toggleSortDirection
 } from 'actions/sorting'
 import PageTitle from './PageTitle'
@@ -24,7 +24,7 @@ const mapDispatchToProps = dispatch => ({
   onDirectionChange: () => 
     dispatch(toggleSortDirection()),
   onFieldChange: e => 
-    dispatch(setSortingField(e.target.value))
+    dispatch(setSortField(e.target.value))
 })
 
 const Header = ({ 
