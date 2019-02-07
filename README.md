@@ -2,7 +2,7 @@ Book Editor
 
 Technologies:
 
-Babel
+Babel\
 Final Form
 React
 React-Router
