@@ -3,7 +3,7 @@ Book Editor
 Technologies:
 
 Babel\
-Final Form
+Final Form\
 React
 React-Router
 Redux
