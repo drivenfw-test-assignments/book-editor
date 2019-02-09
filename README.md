@@ -4,7 +4,7 @@ Technologies:
 
 Babel\
 Final Form\
-React
+React\
 React-Router
 Redux
 Redux-Thunk
