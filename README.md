@@ -5,7 +5,7 @@ Technologies:
 Babel\
 Final Form\
 React\
-React-Router
+React-Router\
 Redux
 Redux-Thunk
 Reselect
