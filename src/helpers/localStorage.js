@@ -8,7 +8,10 @@ export function createBook(book) {
       data.books.push(book)
     } else {
       data = {
-        books: [book],
+        books: {
+          currId: book.id,
+          data: [book]
+        },
         sorting: {
           direction: 'asc',
           field: 'title'
