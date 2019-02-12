@@ -29,10 +29,10 @@ export function editBook(id, book) {
 
     if (lsData) {
       const data = JSON.parse(lsData)
-      const ind = data.books.findIndex(b => b.id === +id)
+      const ind = data.books.data.findIndex(b => b.id === +id)
 
       if (ind >= 0) {
-        data.books[ind] = { ...data.books[ind], ...book }
+        data.books.data[ind] = { ...data.books.data[ind], ...book }
         localStorage.setItem('BOOK-EDITOR', JSON.stringify(data))
       }
     } else {
