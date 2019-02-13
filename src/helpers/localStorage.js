@@ -5,7 +5,7 @@ export function createBook(book) {
 
     if (lsData) {
       data = JSON.parse(lsData)
-      data.books.push(book)
+      data.books.data.push(book)
     } else {
       data = {
         books: {
@@ -47,10 +47,10 @@ export function deleteBook(id) {
 
     if (lsData) {
       const data = JSON.parse(lsData)
-      const ind = data.books.findIndex(b => b.id === +id)
+      const ind = data.books.data.findIndex(b => b.id === +id)
 
       if (ind >= 0) {
-        data.books.splice(ind, 1)
+        data.books.data.splice(ind, 1)
         localStorage.setItem('BOOK-EDITOR', JSON.stringify(data))
       }
     } else {
