@@ -6,7 +6,7 @@ Babel\
 Final Form\
 React\
 React-Router\
-Redux
+Redux\
 Redux-Thunk
 Reselect
 Webpack
