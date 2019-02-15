@@ -7,7 +7,7 @@ Final Form\
 React\
 React-Router\
 Redux\
-Redux-Thunk
+Redux-Thunk\
 Reselect
 Webpack
 
