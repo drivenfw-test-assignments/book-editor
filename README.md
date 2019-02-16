@@ -8,6 +8,6 @@ React\
 React-Router\
 Redux\
 Redux-Thunk\
-Reselect
+Reselect\
 Webpack
 
