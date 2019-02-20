@@ -1,7 +1,16 @@
 .message {
+  box-sizing: border-box;
+  height: 0;
   margin-top: 3em;
-  padding: .3em 1.2em;
   font-size: 2em;
   background: #D5F5E3;
+  transition: all 200ms;
+  opacity: 0;
+}
+
+.message.entered {
+  height: 100%;
+  padding: .3em 1.2em;
+  opacity: 1;
 }
 
