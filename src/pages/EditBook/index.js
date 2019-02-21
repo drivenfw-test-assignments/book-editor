@@ -30,8 +30,9 @@ class EditBook extends Component {
   componentDidUpdate() {
     const { setMessage } = this.props
 
+    window.scroll(0, 0)
     setMessage('Book successfully updated!')
-    setTimeout(() => setMessage(''), 2000)
+    setTimeout(() => setMessage(''), 2500)
   }
 
   render() {
