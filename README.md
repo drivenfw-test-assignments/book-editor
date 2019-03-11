@@ -9,5 +9,5 @@ React-Router\
 Redux\
 Redux-Thunk\
 Reselect\
-Webpack\
+Webpack
 
