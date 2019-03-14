@@ -1,7 +1,7 @@
 .message {
   box-sizing: border-box;
   height: 0;
-  margin-top: 3em;
+  margin-top: 3.5em;
   font-size: 2em;
   background: #D5F5E3;
   transition: all 200ms;
@@ -12,5 +12,11 @@
   height: 100%;
   padding: .3em 1.2em;
   opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .message {
+    margin-top: 2.5em;
+  }
 }
 
