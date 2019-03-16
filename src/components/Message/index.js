@@ -7,23 +7,21 @@ import { Route, withRouter } from 'react-router'
 import './styles.css'
 
 
-const Message = ({ message }) =>
-  <Route render={() =>
-    <Transition
-      in={!!message}
-      timeout={200}
-    >
-      {state => (
-        <div className={classNames('message', state)}>
-          {message}
-        </div>
-      )}
-    </Transition>
-  } />
+const Message = ({ location: { pathname }, message }) =>
+  <Transition
+    in={!!message}
+    timeout={200}
+  >
+    {state => (
+      <div className={classNames('message', state)}>
+        {message}
+      </div>
+    )}
+  </Transition>
 
 Message.propTypes = {
   message: PropTypes.string
 }
 
-export default connect(({ message }) => ({ message }))(withRouter(Message))
+export default withRouter(connect(({ message }) => ({ message }))(Message))
 
