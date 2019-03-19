@@ -14,6 +14,10 @@
   opacity: 1;
 }
 
+.message.sm-margin {
+  margin-top: 1.65em;
+}
+
 @media (min-width: 768px) {
   .message {
     margin-top: 2.5em;
