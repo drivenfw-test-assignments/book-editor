@@ -19,11 +19,7 @@
 }
 
 @media (min-width: 768px) {
-  .message.sm-margin {
-    margin-top: 2.5em;
-  }
-
-  .message {
+  .message, .message.sm-margin {
     margin-top: 2.5em;
   }
 }
