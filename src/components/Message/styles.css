@@ -15,7 +15,9 @@
 }
 
 .message.sm-margin {
-  margin-top: 1.65em;
+  font-size: 1.45em;
+  margin-top: 2.2em;
+  margin-bottom: .5em;
 }
 
 @media (min-width: 768px) {
