@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import classNames from 'classnames'
@@ -8,17 +8,24 @@ import { getClass } from 'helpers/message'
 import './styles.css'
 
 
-const Message = ({ location: { pathname }, message }) =>
-  <Transition
-    in={!!message}
-    timeout={200}
-  >
-    {state => (
-      <div className={classNames('message', state, getClass(pathname))}>
-        {message}
-      </div>
-    )}
-  </Transition>
+class Message extends Component {
+  render() {
+    const { location: { pathname }, message } = this.props
+      
+    return ( 
+      <Transition
+        in={!!message}
+        timeout={200}
+      >
+        {state => (
+          <div className={classNames('message', state, getClass(pathname))}>
+            {message}
+          </div>
+        )}
+      </Transition>
+    )
+  }
+}
 
 Message.propTypes = {
   message: PropTypes.string
