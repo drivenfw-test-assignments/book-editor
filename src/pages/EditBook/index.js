@@ -32,7 +32,6 @@ class EditBook extends Component {
 
     window.scroll(0, 0)
     setMessage('Book successfully updated!')
-    setTimeout(() => setMessage(''), 2500)
   }
 
   render() {
