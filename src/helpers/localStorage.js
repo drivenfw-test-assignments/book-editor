@@ -5,6 +5,7 @@ export function createBook(book) {
 
     if (lsData) {
       data = JSON.parse(lsData)
+      data.books.currId = book.id
       data.books.data.push(book)
     } else {
       data = {
