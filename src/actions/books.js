@@ -1,4 +1,5 @@
 import * as LocalStorage from 'helpers/localStorage'
+import { setMessage } from 'actions/message'
 
 
 export const CREATE_BOOK = 'CREATE_BOOK'
@@ -36,5 +37,6 @@ export const edit = (id, values) => dispatch => {
 export const del = id => dispatch => {
   dispatch(deleteBook(id))
   LocalStorage.deleteBook(id)
+  dispatch(setMessage(`Book (ID: ${id}) was deleted`))
 }
 
