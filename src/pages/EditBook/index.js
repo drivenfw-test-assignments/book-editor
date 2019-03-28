@@ -31,7 +31,6 @@ class EditBook extends Component {
     const { setMessage } = this.props
 
     window.scroll(0, 0)
-    setMessage('Book successfully updated!')
   }
 
   render() {
