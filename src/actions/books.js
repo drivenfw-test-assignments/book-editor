@@ -27,6 +27,7 @@ export const create = values => (dispatch, getState) => {
 
   dispatch(createBook(book))
   LocalStorage.createBook(book)
+  dispatch(setMessage('Book successfully created!'))
 }
 
 export const edit = (id, values) => dispatch => {

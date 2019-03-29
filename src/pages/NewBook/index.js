@@ -34,9 +34,6 @@ class NewBook extends Component {
     const { currId, setMessage } = this.props
 
     if (currId !== prevProps.currId) {
-      setMessage('Book successfully created!')
-      setTimeout(() => setMessage(''), 1000)
-
       this.props.history.push(`/books/${currId}/edit`)
     }
   }
