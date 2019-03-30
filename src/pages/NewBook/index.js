@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => ({
 
 class NewBook extends Component {
   componentDidUpdate(prevProps) {
-    const { currId, setMessage } = this.props
+    const { currId } = this.props
 
     if (currId !== prevProps.currId) {
       this.props.history.push(`/books/${currId}/edit`)
