@@ -28,8 +28,6 @@ const mapDispatchToProps = (
 
 class EditBook extends Component {
   componentDidUpdate() {
-    const { setMessage } = this.props
-
     window.scroll(0, 0)
   }
 
