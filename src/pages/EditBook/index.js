@@ -27,10 +27,6 @@ const mapDispatchToProps = (
 })
 
 class EditBook extends Component {
-  componentDidUpdate() {
-    window.scroll(0, 0)
-  }
-
   render() {
     const { initialValues, onFormSubmit } = this.props
 

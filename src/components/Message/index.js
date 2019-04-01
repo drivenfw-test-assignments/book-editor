@@ -18,6 +18,7 @@ const mapDispatchToProps = dispatch => ({
 class Message extends Component {
   componentDidUpdate(prevProps) {
     if (!prevProps.message && this.props.message) {
+      window.scroll(0, 0)
       setTimeout(() => this.props.setMessage(''), 2500)
     }
   }
