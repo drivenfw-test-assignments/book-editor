@@ -32,7 +32,7 @@ export const create = values => (dispatch, getState) => {
 
 export const edit = (id, values) => dispatch => {
   dispatch(editBook(id, values))
-  LocalStorage.editBook(id, values)
+  LocalStorage.updateBook(id, values)
   dispatch(setMessage('Book successfully updated!'))
 }
 

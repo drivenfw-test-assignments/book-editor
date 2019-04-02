@@ -24,7 +24,7 @@ export function createBook(book) {
   }
 }
 
-export function editBook(id, book) {
+export function updateBook(id, book) {
   if (window.localStorage) {
     const lsData = localStorage.getItem('BOOK-EDITOR')
 
