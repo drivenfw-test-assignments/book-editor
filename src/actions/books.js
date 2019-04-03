@@ -30,7 +30,7 @@ export const create = values => (dispatch, getState) => {
   dispatch(setMessage('Book successfully created!'))
 }
 
-export const edit = (id, values) => dispatch => {
+export const update = (id, values) => dispatch => {
   dispatch(editBook(id, values))
   LocalStorage.updateBook(id, values)
   dispatch(setMessage('Book successfully updated!'))

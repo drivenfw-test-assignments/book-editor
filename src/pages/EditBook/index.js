@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import BookForm from 'components/BookForm'
 import scrollTo from 'hoc/scrollTo'
-import { edit } from 'actions/books'
+import { update } from 'actions/books'
 import { setMessage } from 'actions/message'
 import './styles.css'
 
@@ -22,7 +22,7 @@ const mapDispatchToProps = (
   dispatch,
   { match: { params: { id } } }
 ) => ({
-  onFormSubmit: values => dispatch(edit(id, values)),
+  onFormSubmit: values => dispatch(update(id, values)),
   setMessage: msg => dispatch(setMessage(msg))
 })
 
