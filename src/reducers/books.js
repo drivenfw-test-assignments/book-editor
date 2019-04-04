@@ -1,7 +1,7 @@
 import { 
   CREATE_BOOK,
   DELETE_BOOK,
-  EDIT_BOOK
+  UPDATE_BOOK
 } from 'actions/books'
 
 
@@ -61,7 +61,7 @@ const books = (state = initialState, action) => {
           }
         : state
 
-    case EDIT_BOOK:
+    case UPDATE_BOOK:
       const { id, values } = action.payload
 
       return {

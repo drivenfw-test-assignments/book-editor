@@ -4,7 +4,7 @@ import { setMessage } from 'actions/message'
 
 export const CREATE_BOOK = 'CREATE_BOOK'
 export const DELETE_BOOK = 'DELETE_BOOK'
-export const EDIT_BOOK = 'EDIT_BOOK'
+export const UPDATE_BOOK = 'UPDATE_BOOK'
 
 const createBook = values => ({
   type: CREATE_BOOK,
@@ -12,7 +12,7 @@ const createBook = values => ({
 })
 
 const editBook = (id, values) => ({
-  type: EDIT_BOOK,
+  type: UPDATE_BOOK,
   payload: { id, values }
 })
 
