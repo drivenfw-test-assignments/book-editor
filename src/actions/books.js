@@ -11,7 +11,7 @@ const createBook = values => ({
   payload: values
 })
 
-const editBook = (id, values) => ({
+const updateBook = (id, values) => ({
   type: UPDATE_BOOK,
   payload: { id, values }
 })
@@ -31,7 +31,7 @@ export const create = values => (dispatch, getState) => {
 }
 
 export const update = (id, values) => dispatch => {
-  dispatch(editBook(id, values))
+  dispatch(updateBook(id, values))
   LocalStorage.updateBook(id, values)
   dispatch(setMessage('Book successfully updated!'))
 }
