@@ -219,6 +219,7 @@ class BookForm extends Component {
               )}
             </Field>
             <div className="form-group">
+              // TODO: show image
               <label className="form-group__label">Image</label>
               <input
                 ref={this.imageInput}
