@@ -42,6 +42,7 @@ class Message extends Component {
 }
 
 Message.propTypes = {
+  location: PropTypes.shape({ pathname: PropTypes.string }),
   message: PropTypes.string
 }
 
