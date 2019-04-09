@@ -64,6 +64,12 @@
   margin-left: 1em;
 }
 
+.form-group > img {
+  width: 130px;
+  height: 175px;
+  margin: 20px auto 0 auto;
+}
+
 @media (min-width: 768px) {
   .book-form {
     font-size: 1.6em;

@@ -9,6 +9,14 @@ import './styles.css'
 const required = value => (value ? undefined : "Required")
 
 class BookForm extends Component {
+  state = { imageUrl: '' }
+
+  static getDerivedStateFromProps(props) {
+    const { initialValues: { imageUrl } } = props
+
+    return { imageUrl }
+  }
+
   imageInput = React.createRef()
 
   onSubmit = values => {
@@ -219,13 +227,13 @@ class BookForm extends Component {
               )}
             </Field>
             <div className="form-group">
-              {/* TODO: show image */}
               <label className="form-group__label">Image</label>
               <input
                 ref={this.imageInput}
                 className="form-group__input"
                 type="file" 
               />
+              <img src={this.state.imageUrl} />
             </div>
             <div className="form-buttons">
               <button 
