@@ -2,6 +2,11 @@
   font-size: 1.3em;
 }
 
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
 .form-group {
   padding: 0.4em;
   display: flex;
@@ -64,10 +69,10 @@
   margin-left: 1em;
 }
 
-.form-group > img {
+img {
   width: 130px;
   height: 175px;
-  margin: 20px auto 0 auto;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -97,6 +102,17 @@
 
   .form-buttons__btn {
     width: 130px;
+  }
+
+  img {
+    width: 200px;
+    height: 269px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-inputs {
+    flex-direction: row;
   }
 }
 
