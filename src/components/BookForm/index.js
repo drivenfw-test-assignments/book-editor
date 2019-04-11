@@ -11,13 +11,30 @@ const required = value => (value ? undefined : "Required")
 class BookForm extends Component {
   state = { imageUrl: '' }
 
-  static getDerivedStateFromProps(props) {
+  static getDerivedStateFromProps(props, state) {
     const { initialValues: { imageUrl } } = props
 
-    return { imageUrl }
+    return state.imageUrl ? null : { imageUrl }
   }
 
   imageInput = React.createRef()
+
+  onImageChange = e => {
+    const file = this.imageInput.current.files[0]
+
+    if (file) {
+      // TODO: show loader
+      const reader = new FileReader()
+      
+      reader.onload = e => {
+        const imageUrl = e.target.result
+
+        this.setState({ imageUrl })
+      }
+
+      reader.readAsDataURL(file)
+    }
+  }
 
   onSubmit = values => {
     const file = this.imageInput.current.files[0]
@@ -234,6 +251,7 @@ class BookForm extends Component {
                     ref={this.imageInput}
                     className="form-group__input"
                     type="file" 
+                    onChange={this.onImageChange}
                   />
                 </div>
               </div>
