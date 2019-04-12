@@ -14,6 +14,7 @@ class BookForm extends Component {
   static getDerivedStateFromProps(props, state) {
     const { initialValues: { imageUrl } } = props
 
+    console.log('imageUrl.length = ', (imageUrl.length / 1024 / 1024).toLocaleString(), 'MB')
     return state.imageUrl ? null : { imageUrl }
   }
 
@@ -37,21 +38,14 @@ class BookForm extends Component {
   }
 
   onSubmit = values => {
-    const file = this.imageInput.current.files[0]
+    const { onSubmit } = this.props
+    const { imageUrl } = this.state
 
-    if (file) {
-      // TODO: show loader
-      const reader = new FileReader()
-      
-      reader.onload = e => {
-        values.imageUrl = e.target.result
-        this.props.onSubmit(values) 
-      }
-
-      reader.readAsDataURL(file)
-    } else {
-      this.props.onSubmit(values) 
+    if (imageUrl) {
+      values.imageUrl = imageUrl
     }
+
+    onSubmit(values)
   }
 
   render() {
