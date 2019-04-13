@@ -17,23 +17,31 @@ const mapDispatchToProps = dispatch => ({
 
 class Message extends Component {
   componentDidUpdate(prevProps) {
-    if (!prevProps.message && this.props.message) {
+    if (!prevProps.message.text && this.props.message.text) {
       window.scroll(0, 0)
       setTimeout(() => this.props.setMessage(''), 2500)
     }
   }
 
   render() {
-    const { location: { pathname }, message } = this.props
+    const { 
+      location: { pathname }, 
+      message: { type, text }
+    } = this.props
       
     return ( 
       <Transition
-        in={!!message}
+        in={!!text}
         timeout={200}
       >
         {state => (
-          <div className={classNames('message', state, getClass(pathname))}>
-            {message}
+          <div className={classNames(
+            'message', 
+            type.toLowerCase(), 
+            state, 
+            getClass(pathname)
+          )}>
+            {text}
           </div>
         )}
       </Transition>
@@ -43,7 +51,10 @@ class Message extends Component {
 
 Message.propTypes = {
   location: PropTypes.shape({ pathname: PropTypes.string }),
-  message: PropTypes.string
+  message: PropTypes.shape({ 
+    type: PropTypes.string, 
+    text: PropTypes.string 
+  })
 }
 
 export default withRouter(connect(

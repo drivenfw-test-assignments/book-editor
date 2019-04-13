@@ -4,9 +4,16 @@
   margin-top: 3.5em;
   padding: .3em 0.7em;
   font-size: 2em;
-  background: #D5F5E3;
   transition: all 200ms;
   opacity: 0;
+}
+
+.message.failure {
+  background: #FADBD8;
+}
+
+.message.success {
+  background: #D5F5E3;
 }
 
 .message.entered {

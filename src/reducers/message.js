@@ -1,10 +1,12 @@
 import { SET_MESSAGE } from 'actions/message'
 
 
-const message = (state = '', action) => {
+const initialState = { type: '', text: '' }
+
+const message = (state = initialState, action) => {
   switch (action.type) {
     case SET_MESSAGE:
-      return action.payload
+      return { ...state, ...action.payload }
 
     default:
       return state
