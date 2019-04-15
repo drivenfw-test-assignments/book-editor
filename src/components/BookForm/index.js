@@ -14,7 +14,6 @@ class BookForm extends Component {
   static getDerivedStateFromProps(props, state) {
     const { initialValues: { imageUrl } } = props
 
-    console.log('imageUrl.length = ', (imageUrl.length / 1024 / 1024).toLocaleString(), 'MB')
     return state.imageUrl ? null : { imageUrl }
   }
 
