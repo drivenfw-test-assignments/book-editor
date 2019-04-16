@@ -1,5 +1,5 @@
 import * as LocalStorage from 'helpers/localStorage'
-import { setMessage } from 'actions/message'
+import { FAILURE, setMessage } from 'actions/message'
 
 
 export const CREATE_BOOK = 'CREATE_BOOK'
@@ -25,9 +25,12 @@ export const create = values => (dispatch, getState) => {
   const { books: { currId } } = getState()
   const book = { id: currId + 1, ...values }
 
-  dispatch(createBook(book))
-  LocalStorage.createBook(book)
-  dispatch(setMessage('Book successfully created!'))
+  if (LocalStorage.createBook(book)) {
+    dispatch(createBook(book))
+    dispatch(setMessage('Book successfully created!'))
+  } else {
+    dispatch(setMessage('Error creating book', FAILURE))
+  }
 }
 
 export const update = (id, values) => dispatch => {
