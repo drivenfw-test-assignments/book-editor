@@ -35,21 +35,31 @@ export function createBook(book) {
 }
 
 export function updateBook(id, book) {
-  if (window.localStorage) {
-    const lsData = localStorage.getItem('BOOK-EDITOR')
+  try {
+    if (window.localStorage) {
+      const lsData = localStorage.getItem('BOOK-EDITOR')
 
-    if (lsData) {
-      const data = JSON.parse(lsData)
-      const ind = data.books.data.findIndex(b => b.id === +id)
+      if (lsData) {
+        const data = JSON.parse(lsData)
+        const ind = data.books.data.findIndex(b => b.id === +id)
 
-      if (ind >= 0) {
-        data.books.data[ind] = { ...data.books.data[ind], ...book }
-        localStorage.setItem('BOOK-EDITOR', JSON.stringify(data))
+        if (ind >= 0) {
+          data.books.data[ind] = { ...data.books.data[ind], ...book }
+          localStorage.setItem('BOOK-EDITOR', JSON.stringify(data))
+        }
+      } else {
+        // ERROR!
       }
     } else {
-      // ERROR!
+      throw new Error('Can\'t access localStorage')
     }
+  } catch (e) {
+    console.log('Error updating book:', e)
+
+    return false
   }
+
+  return true
 }
 
 export function deleteBook(id) {
