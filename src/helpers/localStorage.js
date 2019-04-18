@@ -48,7 +48,7 @@ export function updateBook(id, book) {
           localStorage.setItem('BOOK-EDITOR', JSON.stringify(data))
         }
       } else {
-        // ERROR!
+        throw new Error('No data found in localStorage')
       }
     } else {
       throw new Error('Can\'t access localStorage')
