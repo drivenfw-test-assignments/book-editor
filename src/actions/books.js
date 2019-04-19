@@ -34,9 +34,12 @@ export const create = values => (dispatch, getState) => {
 }
 
 export const update = (id, values) => dispatch => {
-  dispatch(updateBook(id, values))
-  LocalStorage.updateBook(id, values)
-  dispatch(setMessage('Book successfully updated!'))
+  if (LocalStorage.updateBook(id, values)) {
+    dispatch(updateBook(id, values))
+    dispatch(setMessage('Book successfully updated!'))
+  } else {
+    dispatch(setMessage('Error updating book', FAILURE))
+  }
 }
 
 export const del = id => dispatch => {
