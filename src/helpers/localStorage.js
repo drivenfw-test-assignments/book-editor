@@ -46,6 +46,8 @@ export function updateBook(id, book) {
         if (ind >= 0) {
           data.books.data[ind] = { ...data.books.data[ind], ...book }
           localStorage.setItem('BOOK-EDITOR', JSON.stringify(data))
+        } else {
+          // TODO: ERROR!
         }
       } else {
         throw new Error('No data found in localStorage')
@@ -73,9 +75,11 @@ export function deleteBook(id) {
       if (ind >= 0) {
         data.books.data.splice(ind, 1)
         localStorage.setItem('BOOK-EDITOR', JSON.stringify(data))
+      } else {
+        // TODO: ERROR!
       }
     } else {
-      // ERROR!
+      // TODO: ERROR!
     }
   }
 }
