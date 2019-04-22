@@ -81,6 +81,8 @@ export function deleteBook(id) {
     } else {
       // TODO: ERROR!
     }
+  } else {
+    // TODO: ERROR!
   }
 }
 
