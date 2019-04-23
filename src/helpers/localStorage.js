@@ -76,7 +76,7 @@ export function deleteBook(id) {
         data.books.data.splice(ind, 1)
         localStorage.setItem('BOOK-EDITOR', JSON.stringify(data))
       } else {
-        // TODO: ERROR!
+        throw new Error(`Book (ID: ${id}) not found`)
       }
     } else {
       // TODO: ERROR!
