@@ -79,7 +79,7 @@ export function deleteBook(id) {
         throw new Error(`Book (ID: ${id}) not found`)
       }
     } else {
-      // TODO: ERROR!
+      throw new Error('No data found in localStorage')
     }
   } else {
     // TODO: ERROR!
