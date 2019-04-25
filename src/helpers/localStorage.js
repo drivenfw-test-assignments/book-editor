@@ -82,7 +82,7 @@ export function deleteBook(id) {
       throw new Error('No data found in localStorage')
     }
   } else {
-    // TODO: ERROR!
+    throw new Error('Can\'t access localStorage')
   }
 }
 
