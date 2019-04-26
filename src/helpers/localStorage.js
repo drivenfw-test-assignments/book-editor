@@ -65,25 +65,33 @@ export function updateBook(id, book) {
 }
 
 export function deleteBook(id) {
-  if (window.localStorage) {
-    const lsData = localStorage.getItem('BOOK-EDITOR')
+  try {
+    if (window.localStorage) {
+      const lsData = localStorage.getItem('BOOK-EDITOR')
 
-    if (lsData) {
-      const data = JSON.parse(lsData)
-      const ind = data.books.data.findIndex(b => b.id === +id)
+      if (lsData) {
+        const data = JSON.parse(lsData)
+        const ind = data.books.data.findIndex(b => b.id === +id)
 
-      if (ind >= 0) {
-        data.books.data.splice(ind, 1)
-        localStorage.setItem('BOOK-EDITOR', JSON.stringify(data))
+        if (ind >= 0) {
+          data.books.data.splice(ind, 1)
+          localStorage.setItem('BOOK-EDITOR', JSON.stringify(data))
+        } else {
+          throw new Error(`Book (ID: ${id}) not found`)
+        }
       } else {
-        throw new Error(`Book (ID: ${id}) not found`)
+        throw new Error('No data found in localStorage')
       }
     } else {
-      throw new Error('No data found in localStorage')
+      throw new Error('Can\'t access localStorage')
     }
-  } else {
-    throw new Error('Can\'t access localStorage')
+  } catch (e) {
+    console.log('Error deleting book:', e)
+
+    return false
   }
+
+  return true
 }
 
 export function setSortingDirection(direction) {
