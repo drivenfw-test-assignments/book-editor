@@ -43,8 +43,11 @@ export const update = (id, values) => dispatch => {
 }
 
 export const del = id => dispatch => {
-  dispatch(deleteBook(id))
-  LocalStorage.deleteBook(id)
-  dispatch(setMessage(`Book (ID: ${id}) was deleted`))
+  if (LocalStorage.deleteBook(id)) {
+    dispatch(deleteBook(id))
+    dispatch(setMessage(`Book (ID: ${id}) was deleted`))
+  } else {
+    dispatch(setMessage('Error deleting book', FAILURE))
+  }
 }
 
