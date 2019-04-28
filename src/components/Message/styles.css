@@ -21,7 +21,7 @@
   opacity: 1;
 }
 
-.message.sm-margin {
+.message.form-message {
   font-size: 1.45em;
   margin-top: 2.8em;
   margin-bottom: .5em;
@@ -33,7 +33,7 @@
     padding: .3em 1.3em;
   }
 
-  .message.sm-margin {
+  .message.form-message {
     margin-top: 3em;
     font-size: 1.75em;
   }
