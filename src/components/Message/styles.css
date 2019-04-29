@@ -1,9 +1,9 @@
 .message {
   box-sizing: border-box;
   height: 0;
-  margin-top: 3.5em;
+  margin-top: 4.82em;
   padding: .3em 0.7em;
-  font-size: 2em;
+  font-size: 1.45em;
   transition: all 200ms;
   opacity: 0;
 }
@@ -18,24 +18,23 @@
 
 .message.entered {
   height: 100%;
+  margin-bottom: .5em;
   opacity: 1;
 }
 
 .message.form-message {
-  font-size: 1.45em;
   margin-top: 2.8em;
-  margin-bottom: .5em;
 }
 
 @media (min-width: 768px) {
   .message {
-    margin-top: 2.5em;
+    margin-top: 3em;
     padding: .3em 1.3em;
+    font-size: 1.75em;
   }
 
   .message.form-message {
     margin-top: 3em;
-    font-size: 1.75em;
   }
 }
 
