@@ -7,6 +7,7 @@ import {
   toggleSortDirection
 } from 'actions/sorting'
 import PageTitle from './PageTitle'
+import { ASC } from 'def'
 import './styles.css'
 
 
@@ -69,7 +70,7 @@ const Header = ({
           className="sort-by__direction"
           onClick={onDirectionChange}
         >
-          {direction === 'asc' ? '▲' : '▼'}
+          {direction === ASC ? '▲' : '▼'}
         </button>
       </div>
     } />
