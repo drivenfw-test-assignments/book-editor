@@ -1,3 +1,6 @@
+import { ASC } from 'def'
+
+
 export function createBook(book) {
   try {
     if (window.localStorage) {
@@ -15,7 +18,7 @@ export function createBook(book) {
             data: [book]
           },
           sorting: {
-            direction: 'asc',
+            direction: ASC,
             field: 'title'
           }
         }
@@ -134,7 +137,7 @@ export function setSortingField(field) {
       data = {
         books: [],
         sorting: {
-          direction: 'asc',
+          direction: ASC,
           field
         }
       }
