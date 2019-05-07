@@ -1,3 +1,4 @@
+import { ASC, DESC } from 'def'
 import {
   SET_SORTING_FIELD,
   TOGGLE_SORTING_DIRECTION
@@ -5,7 +6,7 @@ import {
 
 
 const initialState = {
-  direction: 'asc',
+  direction: ASC,
   field: 'title'
 }
 
@@ -20,9 +21,9 @@ const sorting = (state = initialState, action) => {
     case TOGGLE_SORTING_DIRECTION:
       return {
         ...state,
-        direction: state.direction === 'asc'
-          ? 'desc'
-          : 'asc'
+        direction: state.direction === ASC
+          ? DESC
+          : ASC
       }
 
     default:
