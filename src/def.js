@@ -1,3 +1,3 @@
-export const ASC = 'asc'
-export const DESC = 'desc'
+export const ASC = 'ASC'
+export const DESC = 'DESC'
 
