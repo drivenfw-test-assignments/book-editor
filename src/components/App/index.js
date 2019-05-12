@@ -6,10 +6,11 @@ import {
   Switch
 } from 'react-router-dom'
 import Header from 'components/Header'
+import Message from 'components/Message'
 import EditBook from 'pages/EditBook'
 import BookList from 'pages/BookList'
 import NewBook from 'pages/NewBook'
-import Message from 'components/Message'
+import { ROOT_PATH } from 'def'
 import './styles.css'
 
 
@@ -19,7 +20,7 @@ const App = () =>
       <Header />
       <Message />
       <Switch>
-        <Route exact path="/" component={BookList} />
+        <Route exact path={ROOT_PATH} component={BookList} />
         <Route path="/books/new" component={NewBook} />
         <Route path="/books/:id/edit" component={EditBook} />
         <Route render={() => <Redirect to="/" />} />
