@@ -23,7 +23,7 @@ const App = () =>
         <Route exact path={ROOT_PATH} component={BookList} />
         <Route path="/books/new" component={NewBook} />
         <Route path="/books/:id/edit" component={EditBook} />
-        <Route render={() => <Redirect to="/" />} />
+        <Route render={() => <Redirect to={ROOT_PATH} />} />
       </Switch>
     </div>
   </Router>
