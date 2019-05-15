@@ -10,7 +10,7 @@ import Message from 'components/Message'
 import EditBook from 'pages/EditBook'
 import BookList from 'pages/BookList'
 import NewBook from 'pages/NewBook'
-import { ROOT_PATH } from 'def'
+import { NEW_BOOK_PATH, ROOT_PATH } from 'def'
 import './styles.css'
 
 
@@ -21,7 +21,7 @@ const App = () =>
       <Message />
       <Switch>
         <Route exact path={ROOT_PATH} component={BookList} />
-        <Route path="/books/new" component={NewBook} />
+        <Route path={NEW_BOOK_PATH} component={NewBook} />
         <Route path="/books/:id/edit" component={EditBook} />
         <Route render={() => <Redirect to={ROOT_PATH} />} />
       </Switch>
