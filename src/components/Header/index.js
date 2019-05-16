@@ -7,7 +7,7 @@ import {
   toggleSortDirection
 } from 'actions/sorting'
 import PageTitle from './PageTitle'
-import { ASC, ROOT_PATH } from 'def'
+import { ASC, NEW_BOOK_PATH, ROOT_PATH } from 'def'
 import './styles.css'
 
 
@@ -40,7 +40,7 @@ const Header = ({
         Book Editor
       </Link>
       <Route exact path={ROOT_PATH} render={() =>
-        <Link className="header__create-book" to="/books/new">
+        <Link className="header__create-book" to={NEW_BOOK_PATH}>
           <button className="create-book">
             New Book
           </button>
