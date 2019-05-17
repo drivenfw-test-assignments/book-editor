@@ -46,7 +46,7 @@ const Header = ({
           </button>
         </Link>
       } />
-      <Route path="/books/new" render={() =>
+      <Route path={NEW_BOOK_PATH} render={() =>
         <PageTitle title="New Book" />
       } />
       <Route path="/books/:id/edit" render={() =>
