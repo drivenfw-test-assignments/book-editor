@@ -7,7 +7,7 @@ import {
   toggleSortDirection
 } from 'actions/sorting'
 import PageTitle from './PageTitle'
-import { ASC, NEW_BOOK_PATH, ROOT_PATH } from 'def'
+import { ASC, EDIT_BOOK_PATH, NEW_BOOK_PATH, ROOT_PATH } from 'def'
 import './styles.css'
 
 
@@ -49,7 +49,7 @@ const Header = ({
       <Route path={NEW_BOOK_PATH} render={() =>
         <PageTitle title="New Book" />
       } />
-      <Route path="/books/:id/edit" render={() =>
+      <Route path={EDIT_BOOK_PATH} render={() =>
         <PageTitle title="Edit Book" />
       } />
     </div>
