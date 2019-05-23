@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 
-const FileInput = () =>
-  <div className="file-input" />
+class FileInput extends Component {
+  render () {
+    return <div className="file-input" />
+  }
+}
 
 export default FileInput
 
