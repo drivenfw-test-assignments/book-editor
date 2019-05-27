@@ -21,8 +21,12 @@ class FileInput extends Component {
   }
 
   render () {
+    const { imageUrl } = this.props
+
     return (
       <div className="file-input">
+        <button>Choose file</button>
+        {imageUrl && <button>Delete</button>}
         <input
           ref={this.imageInput}
           type="file" 
