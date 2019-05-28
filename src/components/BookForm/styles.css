@@ -75,6 +75,11 @@ img {
   margin: 0 auto;
 }
 
+.file-input {
+  border: 1px solid rgb(211, 211, 211);
+  display: flex;
+}
+
 .file-input input {
   display: none;
 }
