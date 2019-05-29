@@ -76,8 +76,15 @@ img {
 }
 
 .file-input {
+  height: 1.443em;
   border: 1px solid rgb(211, 211, 211);
   display: flex;
+  justify-content: space-around;
+}
+
+.file-input button {
+  width: 7em;
+  font-size: .667em;
 }
 
 .file-input input {
