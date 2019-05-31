@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 
 
 class FileInput extends Component {
@@ -21,11 +22,12 @@ class FileInput extends Component {
   }
 
   render () {
-    const { imageUrl } = this.props
+    const { className, imageUrl } = this.props
 
     return (
-      <div className="file-input">
+      <div className={classNames('file-input', className)}>
         <button>Choose file</button>
+        <button>Delete</button>
         {imageUrl && <button>Delete</button>}
         <input
           ref={this.imageInput}
