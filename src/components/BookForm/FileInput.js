@@ -14,11 +14,16 @@ class FileInput extends Component {
       reader.onload = e => {
         const imageUrl = e.target.result
 
-        this.props.onFileInputChange(imageUrl)
+        this.props.onChange(imageUrl)
       }
 
       reader.readAsDataURL(file)
     }
+  }
+
+  onChooseFileClick = e => {
+    e.preventDefault()
+    this.imageInput.current.click()
   }
 
   render () {
@@ -26,7 +31,9 @@ class FileInput extends Component {
 
     return (
       <div className={classNames('file-input', className)}>
-        <button>Choose file</button>
+        <button onClick={this.onChooseFileClick}>
+          Choose file
+        </button>
         <button>Delete</button>
         {imageUrl && <button>Delete</button>}
         <input
