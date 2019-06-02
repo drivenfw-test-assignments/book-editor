@@ -26,6 +26,11 @@ class FileInput extends Component {
     this.imageInput.current.click()
   }
 
+  onDeleteFileClick = e => {
+    e.preventDefault()
+    this.props.onChange('')
+  }
+
   render () {
     const { className, imageUrl } = this.props
 
@@ -34,7 +39,9 @@ class FileInput extends Component {
         <button onClick={this.onChooseFileClick}>
           Choose file
         </button>
-        <button>Delete</button>
+        <button onClick={this.onDeleteFileClick}>
+          Delete
+        </button>
         {imageUrl && <button>Delete</button>}
         <input
           ref={this.imageInput}
