@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Form, Field } from 'react-final-form'
 import arrayMutators from 'final-form-arrays'
 import { FieldArray } from 'react-final-form-arrays'
+import FileInput from './FileInput'
 import './styles.css'
 
 
@@ -19,21 +20,8 @@ class BookForm extends Component {
 
   imageInput = React.createRef()
 
-  onImageChange = e => {
-    const file = this.imageInput.current.files[0]
-
-    if (file) {
-      // TODO: show loader
-      const reader = new FileReader()
-      
-      reader.onload = e => {
-        const imageUrl = e.target.result
-
-        this.setState({ imageUrl })
-      }
-
-      reader.readAsDataURL(file)
-    }
+  onImageChange = imageUrl => {
+    this.setState({ imageUrl })
   }
 
   onSubmit = values => {
@@ -240,10 +228,8 @@ class BookForm extends Component {
                 </Field>
                 <div className="form-group">
                   <label className="form-group__label">Image</label>
-                  <input
-                    ref={this.imageInput}
-                    className="form-group__input"
-                    type="file" 
+                  <FileInput
+                    className="form-group__input" 
                     onChange={this.onImageChange}
                   />
                 </div>
