@@ -10,12 +10,12 @@ import './styles.css'
 const required = value => (value ? undefined : "Required")
 
 class BookForm extends Component {
-  state = { imageUrl: '' }
+  state = { imageUrl: null }
 
   static getDerivedStateFromProps(props, state) {
     const { initialValues: { imageUrl } } = props
 
-    return state.imageUrl ? null : { imageUrl }
+    return state.imageUrl === null ? { imageUrl } : null
   }
 
   imageInput = React.createRef()
