@@ -28,10 +28,7 @@ class BookForm extends Component {
     const { onSubmit } = this.props
     const { imageUrl } = this.state
 
-    if (imageUrl) {
-      values.imageUrl = imageUrl
-    }
-
+    values.imageUrl = imageUrl
     onSubmit(values)
   }
 
