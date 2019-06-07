@@ -4,10 +4,9 @@ import { Form, Field } from 'react-final-form'
 import arrayMutators from 'final-form-arrays'
 import { FieldArray } from 'react-final-form-arrays'
 import FileInput from './FileInput'
+import { required } from './validate'
 import './styles.css'
 
-
-const required = value => (value ? undefined : "Required")
 
 class BookForm extends Component {
   state = { imageUrl: null }
