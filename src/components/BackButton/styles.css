@@ -1,0 +1,14 @@
+.back-button {
+  width: 50px;
+  margin-bottom: .5em;
+  text-align: center;
+  transform: scale(2.5, 1.5);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .back-button {
+    transform: scale(3, 2);
+  }
+}
+
