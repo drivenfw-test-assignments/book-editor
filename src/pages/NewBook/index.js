@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import BookForm from 'components/BookForm'
+import BackButton from 'components/BackButton'
 import scrollTo from 'hoc/scrollTo'
 import { create } from 'actions/books'
 import { setMessage } from 'actions/message'
@@ -43,6 +44,7 @@ class NewBook extends Component {
 
     return (
       <div className="new-book">
+        <BackButton />
         <BookForm
           initialValues={initialValues}
           onSubmit={onFormSubmit}
