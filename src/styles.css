@@ -15,6 +15,10 @@ button, select {
   cursor: pointer;
 }
 
+button:active {
+  background-color: var(--secondary-color);
+}
+
 input {
   border: 1px solid var(--primary-color);
 }
