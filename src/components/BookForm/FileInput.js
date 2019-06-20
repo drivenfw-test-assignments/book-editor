@@ -39,10 +39,11 @@ class FileInput extends Component {
         <button onClick={this.onChooseFileClick}>
           Choose file
         </button>
-        <button onClick={this.onDeleteFileClick}>
-          Delete
-        </button>
-        {imageUrl && <button>Delete</button>}
+        {imageUrl && 
+          <button onClick={this.onDeleteFileClick}>
+            Delete
+          </button>
+        }
         <input
           ref={this.imageInput}
           type="file" 

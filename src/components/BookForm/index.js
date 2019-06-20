@@ -33,6 +33,7 @@ class BookForm extends Component {
 
   render() {
     const { initialValues } = this.props
+    const { imageUrl } = this.state
 
     return (
       <Form
@@ -226,6 +227,7 @@ class BookForm extends Component {
                   <label className="form-group__label">Image</label>
                   <FileInput
                     className="form-group__input" 
+                    imageUrl={imageUrl}
                     onChange={this.onImageChange}
                   />
                 </div>
